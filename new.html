@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Be My Valentine ❤️</title>
+
+<style>
+body {
+    margin: 0;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #ffe6eb, #fff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.container {
+    position: relative;
+}
+
+h1 {
+    color: #ff3366;
+    margin-bottom: 40px;
+}
+
+button {
+    padding: 15px 25px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    margin: 10px;
+    transition: 0.3s;
+}
+
+#yes {
+    background: #ff4d6d;
+    color: white;
+}
+
+#no {
+    background: #999;
+    color: white;
+    position: absolute;
+}
+#message img {
+    animation: pop 0.6s ease;
+}
+@keyframes pop {
+    from { transform: scale(0.7); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+
+#message {
+    font-size: 1.5rem;
+    color: #ff3366;
+    margin-top: 20px;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Will you be my Valentine? ❤️</h1>
+
+    <button id="yes" onclick="sayYes()">Yes ❤️</button>
+    <button id="no" onmouseover="moveNo()">No 💔</button>
+
+    <div id="message"><img src="H.jpg" alt="Valentine Image" width="50%"></div>
+
+</div>
+
+<script>
+function sayYes() {
+    document.getElementById("message").innerHTML = `
+        <p>Yay! You just made me the happiest person! 💕</p>
+        <img src="b.jpg" alt="Valentine Image" width="40%">
+    `;
+}
+
+function moveNo() {
+    const noBtn = document.getElementById("no");
+    const x = Math.random() * (window.innerWidth - 100);
+    const y = Math.random() * (window.innerHeight - 100);
+    noBtn.style.left = x + "px";
+    noBtn.style.top = y + "px";
+}
+</script>
+
+</body>
+</html>
